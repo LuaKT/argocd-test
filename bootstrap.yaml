@@ -6,7 +6,7 @@ metadata:
 spec:
   generators:
     - git:
-        repoURL: https://github.com/LuaKT/argotest.git
+        repoURL: https://github.com/LuaKT/argocd-test.git
         revision: HEAD
         directories:
           - path: "apps/core-apps/**"
@@ -16,7 +16,7 @@ spec:
     spec:
       project: default
       source:
-        repoURL: https://github.com/argoproj/argo-cd.git
+        repoURL: https://github.com/LuaKT/argocd-test.git
         targetRevision: HEAD
         path: "apps/core-apps/**"
       destination:
