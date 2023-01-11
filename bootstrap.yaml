@@ -12,7 +12,7 @@ spec:
           - path: "apps/core-apps/**"
   template:
     metadata:
-      name: "{{cluster.name}}-core-apps"
+      name: "core-apps"
     spec:
       project: default
       source:
