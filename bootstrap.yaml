@@ -21,3 +21,27 @@ spec:
         path: "{{path}}"
       destination:
         server: "https://kubernetes.default.svc"
+---
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: apps
+  namespace: default
+spec:
+  generators:
+    - git:
+        repoURL: https://github.com/LuaKT/argocd-test.git
+        revision: HEAD
+        directories:
+          - path: "deploy/*"
+  template:
+    metadata:
+      name: "{{path.basename}}"
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/LuaKT/argocd-test.git
+        targetRevision: HEAD
+        path: "{{path}}"
+      destination:
+        server: "https://kubernetes.default.svc"
